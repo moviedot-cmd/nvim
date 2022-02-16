@@ -17,6 +17,7 @@ keymap("n", "<S-Tab>", ":bp<CR>", { noremap = true })
 keymap("n", "<Leader>c", ":bw<CR>", { noremap = true })
 keymap("n", "<Leader>o", ":tabe", { noremap = true })
 
+
 -- Select all
 keymap("n", "<C-a>", "ggVG", { noremap = true })
 
@@ -59,5 +60,5 @@ keymap("n", "<Leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>
 keymap("n", "<Leader>lg", ":lua _LAZYGIT_TOGGLE()<CR>", { noremap = true })
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>fo", ":Format<cr>", opts)
