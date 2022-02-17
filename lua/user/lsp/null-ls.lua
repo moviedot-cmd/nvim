@@ -14,7 +14,6 @@ null_ls.setup({
 		formatting.prettier.with({
 			extra_args = {
 				"--single-quote",
-				"--jsx-single-quote",
 				"--tab-widths",
 				"--use-tabs",
 			},
