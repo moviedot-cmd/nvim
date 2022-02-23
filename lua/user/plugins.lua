@@ -83,8 +83,15 @@ return packer.startup(function(use)
 	-- Null-LS
 	use("jose-elias-alvarez/null-ls.nvim")
 
-	-- ColorScheme
+	-- ColorSchemes
 	use("embark-theme/vim")
+	use("EdenEast/nightfox.nvim")
+	use({
+		"rose-pine/neovim",
+		as = "rose-pine",
+		tag = "v1.*"
+	})
+	use("morhetz/gruvbox")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
