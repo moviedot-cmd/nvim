@@ -16,6 +16,8 @@ null_ls.setup({
 				"--single-quote",
 				"--tab-widths",
 				"--use-tabs",
+				"--bracket-same-line",
+				"--trailing-comma=none"
 			},
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),

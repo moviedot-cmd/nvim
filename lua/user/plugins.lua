@@ -89,7 +89,7 @@ return packer.startup(function(use)
 	use({
 		"rose-pine/neovim",
 		as = "rose-pine",
-		tag = "v1.*"
+		tag = "v1.*",
 	})
 	use("morhetz/gruvbox")
 
