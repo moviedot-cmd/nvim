@@ -55,8 +55,7 @@ return packer.startup(function(use)
 	-- Own Plugins --
 
 	-- Vim airline
-	use("vim-airline/vim-airline")
-	use("vim-airline/vim-airline-themes")
+	-- use("vim-airline/vim-airline")
 
 	-- Devil Icons
 	use("kyazdani42/nvim-web-devicons")
@@ -85,13 +84,6 @@ return packer.startup(function(use)
 
 	-- ColorSchemes
 	use("embark-theme/vim")
-	use("EdenEast/nightfox.nvim")
-	use({
-		"rose-pine/neovim",
-		as = "rose-pine",
-		tag = "v1.*",
-	})
-	use("morhetz/gruvbox")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -120,6 +112,9 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
+
+	-- Feline
+	use("feline-nvim/feline.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

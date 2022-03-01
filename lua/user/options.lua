@@ -20,5 +20,7 @@ vim.opt.autoindent = true
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2
 vim.opt.signcolumn = "yes"
+vim.opt.mmp = 2000000
+vim.opt.re = 0
 
 vim.g.mapleader = " "
