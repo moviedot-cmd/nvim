@@ -87,7 +87,7 @@ local mappings = {
 	},
 	["c"] = {
 		":bw<CR>",
-		"Close buffer"
+		"Close buffer",
 	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
@@ -98,7 +98,7 @@ local mappings = {
 		"Find files",
 	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["r"] = { ":e<cr>", "Reload" },
+	["R"] = { ":e<cr>", "Reload" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
 	p = {
@@ -163,6 +163,12 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
+	},
+	r = {
+		name = "Replace",
+		r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
+		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
+		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 	},
 	s = {
 		name = "Search",

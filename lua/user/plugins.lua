@@ -52,11 +52,6 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 
-	-- Own Plugins --
-
-	-- Vim airline
-	-- use("vim-airline/vim-airline")
-
 	-- Devil Icons
 	use("kyazdani42/nvim-web-devicons")
 
@@ -117,7 +112,10 @@ return packer.startup(function(use)
 	use("feline-nvim/feline.nvim")
 
 	-- Tabnine
-	use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+
+	-- Spectre
+	use({ "windwp/nvim-spectre", require = "nvim-lua/plenary.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
