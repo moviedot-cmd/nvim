@@ -89,7 +89,7 @@ local mappings = {
 		":bw<CR>",
 		"Close buffer",
 	},
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	["e"] = { "<cmd>:NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -97,8 +97,8 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
+	["E"] = { ":e<cr>", "Reload" },
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["R"] = { ":e<cr>", "Reload" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
 	p = {
