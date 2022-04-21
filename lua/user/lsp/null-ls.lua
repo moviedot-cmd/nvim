@@ -12,12 +12,13 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
+			filetypes = { "javascript", "typescript", "typescriptreact" },
 			extra_args = {
 				"--single-quote",
 				"--tab-widths",
 				"--use-tabs",
 				"--bracket-same-line",
-				"--trailing-comma=none"
+				"--trailing-comma=none",
 			},
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),

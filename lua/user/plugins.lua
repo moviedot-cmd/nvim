@@ -59,14 +59,14 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 
 	-- Comments
-	use("numToStr/Comment.nvim")
+	use({ "numToStr/Comment.nvim", tag = "v0.6" })
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Bufferline
-	use("akinsho/bufferline.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 
 	-- Togleterm
-	use("akinsho/toggleterm.nvim")
+	use({ "akinsho/toggleterm.nvim", branch = "main" })
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -79,6 +79,8 @@ return packer.startup(function(use)
 
 	-- ColorSchemes
 	use("embark-theme/vim")
+	use("Mofiqul/adwaita.nvim")
+	use("sainnhe/gruvbox-material")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -122,6 +124,4 @@ return packer.startup(function(use)
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
-
-	vim.cmd("colorscheme embark")
 end)

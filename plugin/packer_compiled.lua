@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["adwaita.nvim"] = {
+    loaded = true,
+    path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/adwaita.nvim",
+    url = "https://github.com/Mofiqul/adwaita.nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["impatient.nvim"] = {
     loaded = true,
