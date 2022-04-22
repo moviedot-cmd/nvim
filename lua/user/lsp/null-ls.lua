@@ -25,5 +25,6 @@ null_ls.setup({
 		-- formatting.yapf,
 		formatting.stylua,
 		diagnostics.flake8,
+		diagnostics.golangci_lint,
 	},
 })

@@ -35,6 +35,7 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+
 nvim_tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -59,8 +60,8 @@ nvim_tree.setup({
 		},
 	},
 	update_focused_file = {
-		enable = false,
-		update_cwd = false,
+		enable = true,
+		update_cwd = true,
 		ignore_list = {},
 	},
 	system_open = {
@@ -107,3 +108,8 @@ nvim_tree.setup({
 		},
 	},
 })
+
+
+local previous_buf = vim.api.nvim_get_current_buf()
+nvim_tree.open_replacing_current_buffer()
+nvim_tree.find_file(false, previous_buf)
