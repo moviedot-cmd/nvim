@@ -120,7 +120,7 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-spectre", require = "nvim-lua/plenary.nvim" })
 
 	-- golang
-	use("fatih/vim-go")
+	-- use("fatih/vim-go")
 
 	--debugging
 	use("mfussenegger/nvim-dap")

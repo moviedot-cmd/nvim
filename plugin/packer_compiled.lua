@@ -299,11 +299,6 @@ _G.packer_plugins = {
     path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/vim",
     url = "https://github.com/embark-theme/vim"
   },
-  ["vim-go"] = {
-    loaded = true,
-    path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/vim-go",
-    url = "https://github.com/fatih/vim-go"
-  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/mateooviedo/.local/share/nvim/site/pack/packer/start/which-key.nvim",

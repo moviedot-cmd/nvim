@@ -108,8 +108,3 @@ nvim_tree.setup({
 		},
 	},
 })
-
-
-local previous_buf = vim.api.nvim_get_current_buf()
-nvim_tree.open_replacing_current_buffer()
-nvim_tree.find_file(false, previous_buf)
