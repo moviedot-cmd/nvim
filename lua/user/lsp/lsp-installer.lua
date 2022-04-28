@@ -27,7 +27,7 @@ for i = 1, 14 do
 
 	-- Install server if is not installed
 	if ok and server:is_installed() == false then
-		print("Instaled "..server_to_install)
+		print("Instaled " .. server_to_install)
 		server:install()
 	end
 end

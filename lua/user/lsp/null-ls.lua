@@ -12,7 +12,6 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			filetypes = { "javascript", "typescript", "typescriptreact" },
 			extra_args = {
 				"--single-quote",
 				"--tab-widths",
@@ -24,7 +23,6 @@ null_ls.setup({
 		formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.yapf,
 		formatting.stylua,
-		diagnostics.flake8,
-		diagnostics.golangci_lint,
+		diagnostics.flake8
 	},
 })
