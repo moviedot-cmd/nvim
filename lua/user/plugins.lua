@@ -59,7 +59,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-tree.lua")
 
 	-- Comments
-	use({ "numToStr/Comment.nvim", tag = "v0.6" })
+	use({ "numToStr/Comment.nvim" })
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Bufferline

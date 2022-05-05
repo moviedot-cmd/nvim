@@ -12,17 +12,21 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		formatting.prettier.with({
-			extra_args = {
-				"--single-quote",
-				"--tab-widths",
-				"--use-tabs",
-				"--bracket-same-line",
-				"--trailing-comma=none",
-			},
+			extra_args = function(params)
+				return params.options
+					and {
+						"--single-quote",
+						"--tab-width",
+						"--use-tabs",
+						"--bracket-same-line",
+						"--trailing-comma=none",
+						"--arrow-parens=void"
+					}
+			end,
 		}),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.yapf,
 		formatting.stylua,
-		diagnostics.flake8
+		diagnostics.flake8,
 	},
 })

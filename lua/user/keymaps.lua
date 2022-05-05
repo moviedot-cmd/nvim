@@ -3,13 +3,13 @@ local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+keymap("", "<Space>", "<cmd>lua require('which-key').show(' ', {mode = 'n', auto = true})<cr>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Quit and Save
-keymap("n", "<Leader>q", ":q<CR>", { noremap = true })
-keymap("n", "<Leader>w", ":w!<CR>", { noremap = true })
+keymap("n", "<Leader>q", "<cmd>q!<CR>", { noremap = true })
+keymap("n", "<Leader>w", "<cmd>w!<CR>", { noremap = true })
 
 -- Buffers
 keymap("n", "<Tab>", ":bn<CR>", { noremap = true })
