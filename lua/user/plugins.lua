@@ -111,7 +111,7 @@ return packer.startup(function(use)
 	use("lewis6991/gitsigns.nvim")
 
 	-- Feline
-	use("feline-nvim/feline.nvim")
+	use({ "feline-nvim/feline.nvim", branch = "0.5-compat" })
 
 	-- Tabnine
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })

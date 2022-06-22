@@ -1,4 +1,4 @@
-vim.cmd("colorscheme embark")
+vim.cmd("colorscheme gruvbox-material")
 
 require("user.options")
 require("user.plugins")
