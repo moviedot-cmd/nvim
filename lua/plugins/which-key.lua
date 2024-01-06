@@ -10,7 +10,7 @@ return {
 		local mappings = {
 			["/"] = { "<Plug>(comment_toggle_linewise_current)<cr>", "comment line", noremap = false },
 			["?"] = { "<Plug>(comment_toggle_blockwise_visual)<cr>", "comment block", noremap = false, mode = "v" },
-			c = { ":BufferClose<cr>", "close", noremap = true },
+			c = { "close", noremap = true },
 			e = { ":NvimTreeToggle<cr>", "toggle menu", noremap = true },
 			f = {
 				name = "files",

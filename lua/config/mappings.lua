@@ -6,6 +6,9 @@ local opts = { noremap = true, silent = true }
 map("n", "<tab>", "<Cmd>BufferNext<CR>", opts)
 map("n", "<S-tab>", "<Cmd>BufferPrevious<CR>", opts)
 
+-- Buffers
+map("n", "<leader>c", "<Cmd>BufferDelete<CR>", opts)
+
 -- Move between windows
 map("n", "<C-h>", ":wincmd h<cr>", opts)
 map("n", "<C-j>", ":wincmd j<cr>", opts)
