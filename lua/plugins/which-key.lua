@@ -10,7 +10,7 @@ return {
 		local mappings = {
 			["/"] = { "<Plug>(comment_toggle_linewise_current)<cr>", "comment line", noremap = false },
 			["?"] = { "<Plug>(comment_toggle_blockwise_visual)<cr>", "comment block", noremap = false, mode = "v" },
-			c = { "close", noremap = true },
+			c = { ":bdelete<cr>", "close", noremap = true },
 			e = { ":NvimTreeToggle<cr>", "toggle menu", noremap = true },
 			f = {
 				name = "files",
@@ -24,6 +24,7 @@ return {
 				k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
 				l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 				m = { ":DiffviewOpen<cr>", "merge tool" },
+				n = { ":Neogit<cr>", "Neogit" },
 				p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
 				r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 				R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -36,8 +37,9 @@ return {
 				b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 				c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 				C = {
-					"<cmd>Telescope git_bcommits<cr>",
-					"Checkout commit(for current file)",
+					"<cmd>lua require('telescope').extensions.conventional_commits.conventional_commits()<cr>",
+					"Conventional Commits",
+					noremap = true,
 				},
 				d = {
 					"<cmd>Gitsigns diffthis HEAD<cr>",
@@ -56,19 +58,41 @@ return {
 				t = { ":LspStop<cr>", "stop", noremap = true },
 				L = { "Lint", noremap = true },
 			},
+			t = {
+				name = "Test",
+				a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach", noremap = true, silent = true },
+				d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug", noremap = true, silent = true },
+				f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "File", noremap = true, silent = true },
+				n = { "<cmd>lua require('neotest').run.run()<cr>", "Nearest", noremap = true, silent = true },
+				s = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop", noremap = true, silent = true },
+				o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output", noremap = true, silent = true },
+				u = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary", noremap = true, silent = true },
+				w = { "<cmd>lua require('neotest').run.watch()<cr>", "Watch", noremap = true, silent = true },
+				F = {
+					"<cmd>lua require('neotest').run.run({strategy = 'failed'})<cr>",
+					"Failed",
+					noremap = true,
+					silent = true,
+				},
+			},
 			o = {
 				name = "Others",
 				b = {
 					name = "Bookmarks",
-					a = { "Annotate" },
-					c = { "Clear All" },
-					m = { "Toggle" },
-					j = { "Next" },
-					k = { "Prev" },
+					a = { ":BookmarkAnnotate<cr>", "Annotate" },
+					c = { ":BookmarkClear<cr>", "Clear" },
+					C = { ":BookmarkClearAll<cr>", "Clear All" },
+					m = { ":BookmarkToggle<cr>", "Toggle" },
+					j = { ":BookmarkNext<cr>", "Next" },
+					k = { ":BookmarkPrev<cr>", "Prev" },
 					s = {
-						":Telescope bookmarks list<cr>",
+						":Telescope vim_bookmarks all<cr>",
 						"Show All",
 					},
+				},
+				c = {
+					name = "Codium",
+					t = { ":CodeiumToggle<cr>", "Toggle" },
 				},
 				r = {
 					name = "Replace",
@@ -76,16 +100,15 @@ return {
 					w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
 					f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
 				},
-				t = {
-					name = "Terminal",
-					n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-					u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-					t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-					p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-					f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-					h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-					v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+				s = {
+					name = "sort",
+					j = { ":SortJSONByAlphaNum<cr>", "sort json by alpha num" },
 				},
+        t = {
+          name = "terminal",
+          h = { ":ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
+          v = { ":ToggleTerm size=80 direction=vertical<cr>", "vertical" },
+        }
 			},
 			L = { ":Lazy<cr>", "open lazy menu", noremap = true },
 			D = "which_key_ignore",

@@ -1,0 +1,126 @@
+{
+  "Meli import test": {
+    "scope": "javascript",
+    "prefix": ["melitest"],
+    "body": [
+      "const React = require('react');",
+      "require('@testing-library/jest-dom');",
+      "const userEvent = require('@testing-library/user-event').default;",
+      "const { wait } = require('@testing-library/user-event/dist/utils');",
+      "const { render, screen, waitFor, fireEvent } = require('@testing-library/react');",
+      "const restclient = require('nordic/restclient')();",
+      "",
+      "const $3 = require('$4');",
+      "",
+      "describe('$2', () => {",
+      "  test('$1', () => {",
+      "    // Arrange",
+      "    $0",
+      "    ",
+      "    // Act",
+      "    ",
+      "    ",
+      "    // Assert",
+      "    ",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "A for loop."
+  },
+  "meli react commmon component": {
+    "scope": "javascript",
+    "prefix": "melicomp",
+    "body": [
+      "const React = require('react');",
+      "const { useEffect } = require('react');",
+      "const PropTypes = require('prop-types');",
+      "",
+      "const $1 = ({ $2 }) => {",
+      "  useEffect(() => {",
+      "    $4",
+      "  }, []);",
+      "",
+      "  return (",
+      "    <>$0</>",
+      "  );",
+      "};",
+      "",
+      "$1.propTypes = {",
+      "  $2: PropTypes.$3,",
+      "};",
+      "",
+      "module.exports = $1;",
+      ""
+    ],
+    "description": "Log output to console"
+  },
+  "meli use query component": {
+    "scope": "javascript",
+    "prefix": "meliusequery",
+    "body": [
+      "const { useQuery } = require('react-query');",
+      "const config = require('@config/restclient')({ baseURL: '/api' });",
+      "const restClient = require('nordic/restclient')(config);",
+      "",
+      "const $1 = ({ $2 }) => {",
+      "  const { status, data, refetch } = useQuery([$3], () => $4, { enabled: $5, refetchOnWindowFocus: $6, staleTime: $7 });",
+      "	return { status, data, refetch }",
+      "};",
+      "",
+      "module.exports = $1;"
+    ]
+  },
+  "meli controller function": {
+    "scope": "javascript",
+    "prefix": "melicontroller",
+    "body": [
+      "const service = require('@services/$1');",
+      "const { INTERNAL_SERVER_ERROR, DEFAULT_ERROR_MESSAGE, } = require('@constants/httpErrors');",
+      "",
+      "const $2 = async (req, res) => {",
+      "  try {",
+      "    $0",
+      "  } catch (e) {",
+      "    res.status(e.response? e.response?.status || INTERNAL_SERVER_ERROR: INTERNAL_SERVER_ERROR).json(e.response? e.response.data: { message: e.message || DEFAULT_ERROR_MESSAGE });",
+      "  }",
+      "};"
+    ]
+  },
+  "meli service test": {
+    "scope": "javascript",
+    "prefix": "meliservicetest",
+    "body": [
+      "jest.mock('nordic/logger', () =>",
+      "  jest",
+      "    .fn()",
+      "    .mockReturnValue({ error: jest.fn(), info: jest.fn(), debug: jest.fn() })",
+      ");",
+      "const nock = require('nock');",
+      "const { default: waitForExpect } = require('wait-for-expect');",
+      "const logger = require('nordic/logger')('services-massive_actions');",
+      "const service = require('../$1');",
+      "const { $2 } = require('@utils/restClient');",
+      "",
+      "describe('$1', () => {",
+      "  const logError = jest.spyOn(logger, 'error');",
+      "  const expectedError = 'Unexpected error';",
+
+      "  beforeEach(() => {",
+      "    logError.mockReset();",
+      "  });",
+      "",
+      "  test('', () => {",
+      "    // Arrange",
+      "    $0",
+      "    ",
+      "    // Act",
+      "    ",
+      "    ",
+      "    // Assert",
+      "    ",
+      "  });",
+      "});"
+    ]
+  }
+}

@@ -18,5 +18,5 @@ map("n", "<C-l>", ":wincmd l<cr>", opts)
 -- Select all
 map("n", "<C-a>", "gg<S-v>G", opts)
 
--- Newline
-map("n", "o", "<Esc>o", opts)
+-- termim.nvim
+map("t", "<esc>", "<C-\\><C-n>", opts)
