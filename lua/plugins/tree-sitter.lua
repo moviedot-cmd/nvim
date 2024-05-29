@@ -4,9 +4,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	main = "nvim-treesitter.configs",
 	opts = {
-		autotag = {
-			enable = true,
-		},
 		ensure_installed = {
 			"javascript",
 			"json",
@@ -22,6 +19,23 @@ return {
 		},
 		indent = {
 			enable = true,
+		},
+		filetypes = {
+			"html",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"vue",
+			"tsx",
+			"jsx",
+			"rescript",
+			"css",
+			"lua",
+			"xml",
+			"php",
+			"markdown",
 		},
 	},
 }
