@@ -26,3 +26,9 @@ vim.opt.clipboard:append({ "unnamedplus" })
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
+
+-- Disable mouse mode
+vim.o.mouse = ""
+
+-- Set highlight on search
+vim.o.hlsearch = true
