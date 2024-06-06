@@ -17,6 +17,3 @@ map("n", "<C-l>", ":wincmd l<cr>", opts)
 
 -- Select all
 map("n", "<C-a>", "gg<S-v>G", opts)
-
--- termim.nvim
-map("t", "<esc>", "<C-\\><C-n>", opts)

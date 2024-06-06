@@ -61,11 +61,26 @@ return {
 			t = {
 				name = "Test",
 				a = { "<cmd>lua require('neotest').run.attach()<cr>", "Attach", noremap = true, silent = true },
-				d = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>", "Debug", noremap = true, silent = true },
-				f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "File", noremap = true, silent = true },
+				d = {
+					"<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
+					"Debug",
+					noremap = true,
+					silent = true,
+				},
+				f = {
+					"<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+					"File",
+					noremap = true,
+					silent = true,
+				},
 				n = { "<cmd>lua require('neotest').run.run()<cr>", "Nearest", noremap = true, silent = true },
 				s = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop", noremap = true, silent = true },
-				o = { "<cmd>lua require('neotest').output.open({ enter = true })<cr>", "Output", noremap = true, silent = true },
+				o = {
+					"<cmd>lua require('neotest').output.open({ enter = true })<cr>",
+					"Output",
+					noremap = true,
+					silent = true,
+				},
 				u = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary", noremap = true, silent = true },
 				w = { "<cmd>lua require('neotest').run.watch()<cr>", "Watch", noremap = true, silent = true },
 				F = {
@@ -104,11 +119,11 @@ return {
 					name = "sort",
 					j = { ":SortJSONByAlphaNum<cr>", "sort json by alpha num" },
 				},
-        t = {
-          name = "terminal",
-          h = { ":ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
-          v = { ":ToggleTerm size=80 direction=vertical<cr>", "vertical" },
-        }
+				t = {
+					name = "terminal",
+					h = { ":ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
+					v = { ":ToggleTerm size=80 direction=vertical<cr>", "vertical" },
+				},
 			},
 			L = { ":Lazy<cr>", "open lazy menu", noremap = true },
 			D = "which_key_ignore",
