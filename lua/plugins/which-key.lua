@@ -13,8 +13,8 @@ return {
 			b = {
 				name = "buffer",
 				b = { ":Telescope buffers<cr>", "buffers", noremap = true },
+				C = { ":%bd|e#<cr>", "Close all buffers", noremap = true },
 			},
-			c = { ":bdelete<cr>", "close", noremap = true },
 			e = { ":NvimTreeToggle<cr>", "toggle menu", noremap = true },
 			f = {
 				name = "files",
