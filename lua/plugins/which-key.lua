@@ -8,12 +8,9 @@ return {
 	config = function()
 		local wk = require("which-key")
 		local mappings = {
-			["/"] = { "<Plug>(comment_toggle_linewise_current)<cr>", "comment line", noremap = false },
-			["?"] = { "<Plug>(comment_toggle_blockwise_visual)<cr>", "comment block", noremap = false, mode = "v" },
 			b = {
 				name = "buffer",
 				b = { ":Telescope buffers<cr>", "buffers", noremap = true },
-				C = { ":%bd|e#<cr>", "Close all buffers", noremap = true },
 			},
 			e = { ":NvimTreeToggle<cr>", "toggle menu", noremap = true },
 			f = {
