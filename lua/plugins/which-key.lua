@@ -1,106 +1,114 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 500
-	end,
 	config = function()
 		local wk = require("which-key")
-		local mappings = {
-			b = {
-				name = "buffer",
-				b = { ":Telescope buffers<cr>", "buffers", noremap = true },
+		wk.setup({
+			delay = 500,
+			preset = "helix",
+			plugins = {
+				spelling = true,
 			},
-			e = { ":NvimTreeToggle<cr>", "toggle menu", noremap = true },
-			f = {
-				name = "files",
-				f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find files", noremap = true },
-				t = { ":Telescope live_grep<cr>", "Find by text" },
-			},
-			g = {
-				name = "Git",
-				g = { ":LazyGit<cr>", "Lazygit" },
-				j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
-				k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
-				l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-				m = { ":DiffviewOpen<cr>", "merge tool" },
-				n = { ":Neogit<cr>", "Neogit" },
-				p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-				r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-				R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-				s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-				u = {
-					"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-					"Undo Stage Hunk",
-				},
-				o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-				b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-				c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-				C = {
-					"<cmd>lua require('telescope').extensions.conventional_commits.conventional_commits()<cr>",
-					"Conventional Commits",
-					noremap = true,
-				},
-				d = {
-					"<cmd>Gitsigns diffthis HEAD<cr>",
-					"Git Diff",
-				},
-			},
-			l = {
-				name = "LSP",
-				i = { ":LspInfo<cr>", "info", noremap = true },
-				f = { "format", noremap = true },
-				l = { ":LspLog<cr>", "log", noremap = true },
-				r = { ":LspRestart<cr>", "restart", noremap = true },
-				s = { ":LspStart<cr>", "start", noremap = true },
-				t = { ":LspStop<cr>", "stop", noremap = true },
-				L = { "Lint", noremap = true },
-			},
-			o = {
-				name = "Others",
-				b = {
-					name = "Bookmarks",
-					a = { ":BookmarkAnnotate<cr>", "Annotate" },
-					c = { ":BookmarkClear<cr>", "Clear" },
-					C = { ":BookmarkClearAll<cr>", "Clear All" },
-					m = { ":BookmarkToggle<cr>", "Toggle" },
-					j = { ":BookmarkNext<cr>", "Next" },
-					k = { ":BookmarkPrev<cr>", "Prev" },
-					s = {
-						":Telescope vim_bookmarks all<cr>",
-						"Show All",
-					},
-				},
-				c = {
-					name = "Codium",
-					t = { ":CodeiumToggle<cr>", "Toggle" },
-				},
-				r = {
-					name = "Replace",
-					r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-					w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-					f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-				},
-				s = {
-					name = "sort",
-					j = { ":SortJSONByAlphaNum<cr>", "sort json by alpha num" },
-				},
-				t = {
-					name = "terminal",
-					h = { ":ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
-					v = { ":ToggleTerm size=80 direction=vertical<cr>", "vertical" },
-				},
-			},
-			q = { ":q<cr>", "quit", noremap = true },
-			w = { ":w<cr>", "save", noremap = true },
-			L = { ":Lazy<cr>", "open lazy menu", noremap = true },
-			D = "which_key_ignore",
-		}
+		})
 
-		wk.register(mappings, { prefix = "<leader>" })
+		wk.add({
+			-- Buffer group
+			{ "<leader>b", icon = "", group = "Buffer" },
+			{ "<leader>bb", "<cmd>Telescope buffers<cr>", icon = "", desc = "All buffers" },
+			-- Explorer
+			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", icon = "", desc = "Explorer" },
+			-- Files group
+			{ "<leader>f", icon = "", group = "Files" },
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>", icon = "", desc = "Find files" },
+			{ "<leader>ft", "<cmd>Telescope live_grep<cr>", icon = "", desc = "Find files by text" },
+			-- Git group
+			{ "<leader>g", icon = "", group = "Git" },
+			{ "<leader>gb", "<cmd>Telescope git_branches<cr>", icon = "", desc = "Git branches" },
+			{ "<leader>gc", "<cmd>Telescope git_commits<cr>", icon = "", desc = "Git commits" },
+			{ "<leadear>gd", "<cmd>DiffviewOpen<cr>", icon = "", desc = "Git diff" },
+			{ "<leader>gg", "<cmd>LazyGit<cr>", icon = "", desc = "Git" },
+			{ "<leader>gn", "<cmd>Neogit<cr>", icon = "", desc = "Neogit" },
+			{ "<leader>gs", "<cmd>Telescope git_status<cr>", icon = "", desc = "Git status" },
+			{ "<leader>gB", "<cmd>Git blame<cr>", icon = "", desc = "Git blame" },
+			{
+				"<leader>gC",
+				"<cmd>lua require('telescope').extensions.conventional_commits.conventional_commits()<cr>",
+				icon = "",
+				desc = "Git conventional commits",
+			},
+			-- Help group
+			{ "<leader>h", icon = " ", group = "Help" },
+			{
+				"<leader>h?",
+				function()
+					require("which-key").show()
+				end,
+				desc = "Buffer Local Keymaps (which-key)",
+			},
+			-- Lsp group
+			{ "<leader>l", icon = " ", group = "lsp" },
+			{ "<leader>li", "<cmd>LspInfo<cr>", icon = "", desc = "Lsp Info" },
+			{ "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", icon = "", desc = "Lsp Format" },
+			{ "<leader>ll", "<cmd>LspLog<cr>", icon = "", desc = "Lsp Log" },
+			{ "<leader>lr", "<cmd>LspRestart<cr>", icon = "", desc = "Lsp Restart" },
+			{ "<leader>ls", "<cmd>LspStart<cr>", icon = "", desc = "Lsp Start" },
+			{ "<leader>lt", "<cmd>LspStop<cr>", icon = "", desc = "Lsp Stop" },
+			{ "<leader>lL", "<cmd>LspToggleDiagnostics<cr>", icon = "", desc = "Lsp Toggle Diagnostics" },
+			-- Others group
+			{ "<leader>o", icon = "󰡨", group = "others" },
+			-- Other group - bookmarks
+			{ "<leader>ob", icon = "", group = "Bookmarks" },
+			{ "<leader>oba", "<cmd>BookmarkAnnotate<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obc", "<cmd>BookmarkClear<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obj", "<cmd>BookmarkNext<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obk", "<cmd>BookmarkPrev<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obs", "<cmd>Telescope vim_bookmarks all<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obt", "<cmd>BookmarkToggle<cr>", icon = "", desc = "Bookmarks" },
+			{ "<leader>obC", "<cmd>BookmarkClearAll<cr>", icon = "", desc = "Bookmarks" },
+			-- Others group - codeium
+			{ "<leader>oc", icon = "", group = "Codeium" },
+			{ "<leader>oct", "<cmd>CodeiumToggle<cr>", icon = "", desc = "Codeium toggle" },
+			-- Others group - replace
+			{ "<leader>or", icon = "", group = "Replace" },
+			{
+				"<leader>orf",
+				"<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
+				icon = "",
+				desc = "Replace file",
+			},
+			{ "<leader>orr", "<cmd>lua require('spectre').open()<CR>", icon = "", desc = "Replace" },
+			{
+				"<leader>orw",
+				"<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+				icon = "",
+				desc = "Replace word",
+			},
+			-- Others group - sort
+			{ "<leader>os", icon = "", group = "Sort" },
+			{ "<leader>osj", "<cmd>SortJSONByAlphaNum<cr>", icon = "", desc = "Sort JSON" },
+			-- Others group - terminal
+			{ "<leader>ot", icon = "", group = "Terminal" },
+			{
+				"<leader>oth",
+				"<cmd>ToggleTerm size=20 direction=horizontal<cr>",
+				icon = "",
+				desc = "Terminal Horizontal",
+			},
+			{
+				"<leader>otv",
+				"<cmd>ToggleTerm size=80 direction=vertical<cr>",
+				icon = "",
+				desc = "Terminal Vertical",
+			},
+			-- Quit
+			{ "<leader>q", ":q<cr>", icon = "", desc = "quit" },
+			-- Save
+			{ "<leader>w", ":w<cr>", icon = "", desc = "Save", hidden = true },
+			-- Hidden or Ignore
+			{ "<leader>c", hidden = true },
+			{ "<leader>d", hidden = true },
+			{ "<leader>r", hidden = true },
+			{ "<leader>D", hidden = true },
+		})
 	end,
-	opts = {
-		registers = true,
-	},
 }
