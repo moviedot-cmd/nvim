@@ -1,4 +1,4 @@
---[[ local map = vim.api.nvim_set_keymap
+local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Buffers
@@ -24,4 +24,4 @@ map("n", "<esc>", ":noh<cr>", opts)
 map("n", "<leader>w", ":w<cr>", opts)
 
 -- Quit
-map("n", "<leader>q", ":q<cr>", opts) ]]
+map("n", "<leader>q", ":q<cr>", opts)

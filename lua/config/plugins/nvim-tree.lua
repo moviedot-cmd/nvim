@@ -15,7 +15,6 @@ function M.setup()
 
 		-- custom mappings
 		vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
-		-- vim.keymap.set('n', 'l', api.node.open.replace_tree_buffer, opts('Open: In Place'))
 		vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 	end
 

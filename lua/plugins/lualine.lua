@@ -12,8 +12,8 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
+				component_separators = "|",
+				section_separators = " ",
 				disabled_filetypes = {
 					statusline = {},
 					winbar = {},
@@ -29,9 +29,20 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { { "filename", path = 3 } },
+				lualine_b = { { "filename" } },
 				lualine_c = { "diagnostics" },
-				lualine_x = {},
+				lualine_x = {
+					{
+						require("noice").api.statusline.mode.get,
+						cond = require("noice").api.statusline.mode.has,
+						color = { fg = "#ff9e64" },
+					},
+					{
+						require("noice").api.status.command.get,
+						cond = require("noice").api.status.command.has,
+						color = { fg = "#ff9e64" },
+					},
+				},
 				lualine_y = { { showCodeiumStatus } },
 				lualine_z = { "filetype" },
 			},
