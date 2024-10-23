@@ -46,7 +46,10 @@ wk.add({
 	},
 	-- Lsp group
 	{ "<leader>l", icon = " ", group = "lsp" },
+	{ "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", icon = "", desc = "Lsp Diagnostics" },
 	{ "<leader>li", "<cmd>LspInfo<cr>", icon = "", desc = "Lsp Info" },
+	{ "<leader>lj", "<cmd>lua vim.diagnostic.goto_next()<cr>", icon = "", desc = "Next Diagnostic" },
+	{ "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", icon = "", desc = "Prev Diagnostic" },
 	{ "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", icon = "", desc = "Lsp Format" },
 	{ "<leader>ll", "<cmd>LspLog<cr>", icon = "", desc = "Lsp Log" },
 	{ "<leader>lr", "<cmd>LspRestart<cr>", icon = "", desc = "Lsp Restart" },
