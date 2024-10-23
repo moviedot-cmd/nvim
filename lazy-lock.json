@@ -19,6 +19,7 @@
   "gitsigns.nvim": { "branch": "main", "commit": "1ef74b546732f185d0f806860fa5404df7614f28" },
   "goto-preview": { "branch": "main", "commit": "1519ea3512828c944eed5b2bbb66a8f8deb92447" },
   "gruvbox-material": { "branch": "master", "commit": "559b4a9abb6781699404dfd98fb7d6ec83113337" },
+  "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
   "hydra.nvim": { "branch": "master", "commit": "3ced42c0b6a6c85583ff0f221635a7f4c1ab0dd0" },
   "indent-blankline.nvim": { "branch": "master", "commit": "18603eb949eba08300799f64027af11ef922283f" },
   "kanagawa.nvim": { "branch": "master", "commit": "f491b0fe68fffbece7030181073dfe51f45cda81" },
@@ -69,6 +70,5 @@
   "themery.nvim": { "branch": "main", "commit": "834d9bd81ddcaabbcba1cc51827455e9652a9d97" },
   "todo-comments.nvim": { "branch": "main", "commit": "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0" },
   "toggleterm.nvim": { "branch": "main", "commit": "48be57eaba817f038d61bbf64d2c597f578c0827" },
-  "vim-bookmarks": { "branch": "master", "commit": "9cc5fa7ecc23b052bd524d07c85356c64b92aeef" },
   "which-key.nvim": { "branch": "main", "commit": "fb070344402cfc662299d9914f5546d840a22126" }
 }
