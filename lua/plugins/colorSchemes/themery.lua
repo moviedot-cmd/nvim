@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("themery").setup({
 			themes = {
-				"nord",
+				"nordic",
 				"catppuccin",
 				"kanagawa",
 				"mellow",
@@ -14,6 +14,7 @@ return {
 				"nordern",
 				"lackluster",
 				"posterpole",
+				"yugen",
 			},
 			livePreview = true,
 		})
