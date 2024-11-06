@@ -9,10 +9,10 @@ map("n", "<tab>", ":bnext<enter>", { noremap = false })
 map("n", "td", ":bdelete<enter>", { noremap = false })
 
 -- Move between windows
-map("n", "<C-h>", ":wincmd h<cr>", opts)
-map("n", "<C-j>", ":wincmd j<cr>", opts)
-map("n", "<C-k>", ":wincmd k<cr>", opts)
-map("n", "<C-l>", ":wincmd l<cr>", opts)
+map("n", "<C-h>", ":wincmd h<CR>", opts)
+map("n", "<C-j>", ":wincmd j<CR>", opts)
+map("n", "<C-k>", ":wincmd k<CR>", opts)
+map("n", "<C-l>", ":wincmd l<CR>", opts)
 
 -- Select all
 map("n", "<C-a>", "gg<S-v>G", opts)
