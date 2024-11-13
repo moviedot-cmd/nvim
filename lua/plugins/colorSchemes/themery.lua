@@ -6,6 +6,13 @@ return {
         "nordic",
         "catppuccin-mocha",
         "kanagawa",
+        {
+          name = "kanagawa-dragon",
+          colorscheme = "kanagawa-dragon",
+          before = [[
+            vim.g.kanagawa_background = 'dragon'
+          ]],
+        },
         "mellow",
         "gruvbox-material",
         "bamboo",

@@ -13,7 +13,18 @@ wk.setup({
 wk.add({
 	-- Buffer group
 	{ "<leader>b", icon = "", group = "Buffer" },
-	{ "<leader>bb", "<cmd>Telescope buffers<cr>", icon = "", desc = "All buffers" },
+	{
+		"<leader>bb",
+		"<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>",
+		icon = "",
+		desc = "All buffers",
+	},
+	{
+		"<leader>bC",
+		"<cmd>lua require('close_buffers').wipe({ type = 'other' })<cr>",
+		icon = "",
+		desc = "Close all buffers",
+	},
 	-- Explorer
 	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", icon = "", desc = "Explorer" },
 	-- Files group
@@ -69,6 +80,13 @@ wk.add({
 		icon = "",
 		desc = "Toggle Harpoon",
 	},
+	-- Testing group
+	{ "<Leader>t", icon = "", group = "Testing" },
+	{ "<Leader>tt", "<cmd>TestNearest<cr>", icon = "", desc = "Test nearest" },
+	{ "<Leader>tf", "<cmd>TestFile<cr>", icon = "", desc = "Test file" },
+	{ "<Leader>ta", "<cmd>TestSuite<cr>", icon = "", desc = "Test suite" },
+	{ "<Leader>tl", "<cmd>TestLast<cr>", icon = "", desc = "Test last" },
+	{ "<Leader>tg", "<cmd>TestVisit<cr>", icon = "", desc = "Test visit" },
 	-- Others group
 	{ "<leader>o", icon = "󰡨", group = "others" },
 	-- Others group - codeium

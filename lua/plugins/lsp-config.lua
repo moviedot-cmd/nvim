@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	dependecies = {
 		"williamboman/mason.nvim",
-		"folke/neodev.nvim",
+		"folke/lazydev.nvim",
 	},
 	config = function()
 		-- vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float)
@@ -34,7 +34,7 @@ return {
 
 		local lspconfig = require("lspconfig")
 
-		require("neodev").setup()
+		require("lazydev").setup()
 		lspconfig.lua_ls.setup({
 			on_attach = on_attach,
 			settings = {
@@ -45,6 +45,9 @@ return {
 			},
 		})
 		lspconfig.ts_ls.setup({
+			on_attach = on_attach,
+		})
+		lspconfig.bashls.setup({
 			on_attach = on_attach,
 		})
 	end,

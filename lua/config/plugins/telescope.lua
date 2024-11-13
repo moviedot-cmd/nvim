@@ -16,6 +16,7 @@ tele.setup({
 					type = "action",
 					opts = { nowait = true, silent = true },
 				},
+				["<C-d>"] = actions.delete_buffer,
 			},
 			n = {
 				["<C-j>"] = {
@@ -28,6 +29,7 @@ tele.setup({
 					type = "action",
 					opts = { nowait = true, silent = true },
 				},
+				["d"] = actions.delete_buffer,
 			},
 		},
 	},
