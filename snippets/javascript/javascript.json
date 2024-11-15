@@ -30,7 +30,7 @@
   },
   "meli react commmon component": {
     "scope": "javascript",
-    "prefix": "melicomp",
+    "prefix": ["melicomp"],
     "body": [
       "const React = require('react');",
       "const { useEffect } = require('react');",

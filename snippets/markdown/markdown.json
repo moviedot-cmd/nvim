@@ -1,0 +1,23 @@
+{
+  "Meli add AG": {
+    "scopte": "markdown",
+    "prefix": ["meliag"],
+    "body": [
+      "---",
+      "",
+      "$1",
+      "",
+      "Scope: beta",
+      "",
+      "> $2",
+      "> $3",
+      "",
+      "Scope: prod",
+      "> $4",
+      "> $5",
+      "",
+      "---"
+    ],
+    "description": "Add AG in markdown"
+  }
+}

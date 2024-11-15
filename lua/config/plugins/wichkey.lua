@@ -37,7 +37,6 @@ wk.add({
 	{ "<leader>gc", "<cmd>Telescope git_commits<cr>", icon = "", desc = "Git commits" },
 	{ "<leader>gd", "<cmd>DiffviewOpen<cr>", icon = "", desc = "Git diff" },
 	{ "<leader>gg", "<cmd>LazyGit<cr>", icon = "", desc = "Git" },
-	{ "<leader>gn", "<cmd>Neogit<cr>", icon = "", desc = "Neogit" },
 	{ "<leader>gs", "<cmd>Telescope git_status<cr>", icon = "", desc = "Git status" },
 	{ "<leader>gB", "<cmd>Git blame<cr>", icon = "", desc = "Git blame" },
 	{
