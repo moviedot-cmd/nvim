@@ -1,6 +1,4 @@
 local wk = require("which-key")
-local harpoon = require("harpoon")
-local harpoon_module = require("config.plugins.harpoon")
 
 wk.setup({
 	delay = 500,
@@ -66,11 +64,6 @@ wk.add({
 	{ "<leader>ls", "<cmd>LspStart<cr>", icon = "", desc = "Lsp Start" },
 	{ "<leader>lt", "<cmd>LspStop<cr>", icon = "", desc = "Lsp Stop" },
 	{ "<leader>lL", "<cmd>LspToggleDiagnostics<cr>", icon = "", desc = "Lsp Toggle Diagnostics" },
-	-- Marks Harpoon
-	{ "<leader>m", icon = "", group = "Marks Harpoon" },
-	{ "<leader>ma", harpoon_module.add_mark, icon = "", desc = "Add Mark" },
-	{ "<leader>mr", harpoon_module.remove_mark, icon = "", desc = "Remove Mark" },
-	{ "<leader>mc", harpoon_module.clear_marks, icon = "", desc = "Clear Marks" },
 	{
 		"<leader>mm",
 		function()

@@ -67,11 +67,3 @@ pcall(tele.load_extension("fzf"))
 pcall(tele.load_extension("conventional_commits"))
 pcall(tele.load_extension("vim_bookmarks"))
 pcall(tele.load_extension("file_browser"))
-
-vim.keymap.set("n", "/", function()
-	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = false,
-	}))
-end, { desc = "[/] Fuzzily search in current buffer]" })
