@@ -158,6 +158,19 @@ wk.add({
     icon = "",
     desc = "Terminal Vertical",
   },
+  -- Others group - Coder Runner
+  {
+    "<leader>oC",
+    icon = "",
+    desc = "Code Runner",
+    group = "Code Runner",
+  },
+  {
+    "<leader>oCr",
+    ":RunCode<cr>",
+    icon = "",
+    desc = "Code Runner Run",
+  },
   -- Quit
   { "<leader>q", ":q<cr>", icon = "", desc = "quit" },
   -- Save
