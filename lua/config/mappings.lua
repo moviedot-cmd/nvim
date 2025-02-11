@@ -2,11 +2,11 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Buffers
-map("n", "bk", ":blast<enter>", { noremap = false })
-map("n", "bj", ":bfirst<enter>", { noremap = false })
+map("n", "tk", ":blast<enter>", { noremap = false })
+map("n", "tj", ":bfirst<enter>", { noremap = false })
 map("n", "<S-tab>", ":bprev<enter>", { noremap = false })
 map("n", "<tab>", ":bnext<enter>", { noremap = false })
-map("n", "bd", ":bdelete<enter>", { noremap = false })
+map("n", "td", ":bdelete<enter>", { noremap = false })
 
 -- help
 map("n", "<leader>h", ":Help ", opts)

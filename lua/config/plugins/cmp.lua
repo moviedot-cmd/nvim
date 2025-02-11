@@ -10,7 +10,7 @@ function M.setup()
 		formatting = {
 			format = function(entry, vim_item)
 				if vim.tbl_contains({ "path" }, entry.source.name) then
-					local icon, hl_group = require("nvim-web-devicons").get_icon(entry:completion_item().label)
+					local icon, hl_group = require("nvim-web-devicons").get_icon(entry:get_completion_item().label)
 					if icon then
 						vim_item.kind = icon
 						vim_item.kind_hl_group = hl_group
@@ -19,16 +19,13 @@ function M.setup()
 				end
 				return require("lspkind").cmp_format({
 					mode = "symbol",
-					max_width = 50,
 					menu = {
-						copilot = "[Copilot]",
 						buffer = "[Buffer]",
 						nvim_lsp = "[LSP]",
 						luasnip = "[LuaSnip]",
 						nvim_lua = "[Lua]",
 						latex_symbols = "[Latex]",
 					},
-					symbol_map = { Copilot = "" },
 				})(entry, vim_item)
 			end,
 		},
@@ -58,11 +55,10 @@ function M.setup()
 			["<c-space>"] = cmp.mapping.complete(),
 		},
 		sources = {
-			{ name = "nvim_lsp", group_index = 2 },
-			{ name = "luasnip", group_index = 2 },
-			{ name = "copilot", group_index = 2 },
-			{ name = "path", group_index = 2 },
-			{ name = "buffer", group_index = 2 },
+			{ name = "nvim_lsp" },
+			{ name = "path" },
+			{ name = "luasnip" },
+			{ name = "buffer" },
 		},
 		window = {
 			completion = cmp.config.window.bordered(),
