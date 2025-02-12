@@ -18,12 +18,12 @@ wk.add({
 		desc = "All buffers",
 	},
 	{
-		"<leader>bC",
+		"<leader>bc",
 		"<cmd>lua require('close_buffers').wipe({ type = 'other' })<cr>",
 		icon = "",
 		desc = "Close all buffers",
 	},
-	-- Explorer
+		-- Explorer
 	{ "<leader>e", ":Oil --float<cr>", icon = "", desc = "Explorer" },
 	-- Files group
 	{ "<leader>f", icon = "", group = "Files" },
@@ -52,6 +52,7 @@ wk.add({
 		end,
 		desc = "Buffer Local Keymaps (which-key)",
 	},
+  { "<leader>hm", ":messages<cr>", icon = " ", desc = "Start log messages" },
 	-- Lsp group
 	{ "<leader>l", icon = " ", group = "lsp" },
 	{ "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", icon = "", desc = "Lsp Diagnostics" },
@@ -112,8 +113,8 @@ wk.add({
 	{ "<leader>o", icon = "󰡨", group = "others" },
 	-- Others group - codeium
 	{ "<leader>oc", icon = "", group = "Codeium/Copilot" },
-  { "<leader>occ", "<cmd>Copilot disable<cr>", icon = "", desc = "Copilot disable" },
-  { "<leader>ocr", "<cmd>Copilot restart<cr>", icon = "", desc = "Copilot restart" },
+	{ "<leader>occ", "<cmd>Copilot disable<cr>", icon = "", desc = "Copilot disable" },
+	{ "<leader>ocr", "<cmd>Copilot restart<cr>", icon = "", desc = "Copilot restart" },
 	{ "<leader>oct", "<cmd>CodeiumToggle<cr>", icon = "", desc = "Codeium toggle" },
 	-- Others groups - markdown
 	{
@@ -210,6 +211,14 @@ wk.add({
 		icon = "",
 		desc = "Todo all Warning",
 	},
+  -- Copilot chat
+	{ "<leader>C", icon = "", group = "Copilot Chat" },
+	{ "<leader>Cc", "<cmd>CopilotChatToggle<cr>", icon = "", desc = "Toggle Copilot Chat" },
+	{ "<leader>Ce", "<cmd>CopilotChatExplain<cr>", icon = "", desc = "Explain code" },
+	{ "<leader>Cf", "<cmd>CopilotChatFix<cr>", icon = "", desc = "Fix code" },
+	{ "<leader>Co", "<cmd>CopilotChatOptimize<cr>", icon = "", desc = "Optimize code" },
+	{ "<leader>Ct", "<cmd>CopilotChatTests", icon = "", desc = "Test code" },
+
 	-- Hidden or Ignore
 	{ "<leader>c", hidden = true },
 	{ "<leader>d", hidden = true },
