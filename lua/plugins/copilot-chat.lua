@@ -9,10 +9,21 @@ return {
 		},
 		build = "make token",
 		opts = {
+			mappings = {
+				submit_prompt = {
+					normal = "<C-c>",
+					insert = "<C-c>",
+				},
+				show_diff = {
+					full_diff = true,
+				},
+			},
 			debug = true, -- Enable debugging
 			show_help = true, -- Show help actions
 			window = {
-				layout = "float",
+				layout = "vertical", -- 'vertical', 'horizontal', 'float', 'replace'
+				border = "shadow",
+				width = 70,
 			},
 			auto_follow_cursor = false, -- Don't follow the cursor after getting response
 		},

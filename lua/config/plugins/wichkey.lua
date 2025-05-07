@@ -23,7 +23,7 @@ wk.add({
 		icon = "",
 		desc = "Close all buffers",
 	},
-		-- Explorer
+	-- Explorer
 	{ "<leader>e", ":Oil --float<cr>", icon = "", desc = "Explorer" },
 	-- Files group
 	{ "<leader>f", icon = "", group = "Files" },
@@ -52,7 +52,7 @@ wk.add({
 		end,
 		desc = "Buffer Local Keymaps (which-key)",
 	},
-  { "<leader>hm", ":messages<cr>", icon = " ", desc = "Start log messages" },
+	{ "<leader>hm", ":messages<cr>", icon = " ", desc = "Start log messages" },
 	-- Lsp group
 	{ "<leader>l", icon = " ", group = "lsp" },
 	{ "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", icon = "", desc = "Lsp Diagnostics" },
@@ -110,7 +110,7 @@ wk.add({
 	{ "<Leader>tl", "<cmd>TestLast<cr>", icon = "", desc = "Test last" },
 	{ "<Leader>tg", "<cmd>TestVisit<cr>", icon = "", desc = "Test visit" },
 	-- Others group
-	{ "<leader>o", icon = "󰡨", group = "others" },
+	{ "<leader>o", icon = "󰡨", group = "others", mode = { "n", "v" } },
 	-- Others group - codeium
 	{ "<leader>oc", icon = "", group = "Codeium/Copilot" },
 	{ "<leader>occ", "<cmd>Copilot disable<cr>", icon = "", desc = "Copilot disable" },
@@ -130,7 +130,7 @@ wk.add({
 		desc = "Markdown previw",
 	},
 	-- Others group - replace
-	{ "<leader>or", icon = "", group = "Replace" },
+	{ "<leader>or", icon = "", group = "Replace", mode = { "n", "v" } },
 	{
 		"<leader>orf",
 		"<cmd>lua require('spectre').open_file_search({select_word=true})<CR>",
@@ -174,6 +174,25 @@ wk.add({
 		icon = "",
 		desc = "Code Runner Run",
 	},
+	-- Other group - org mode
+	{
+		"<leader>oo",
+		icon = "",
+		desc = "Org mode",
+		group = "Org mode",
+	},
+	{
+		"<leader>ooa",
+		":Org agenda<cr>",
+		icon = "",
+		desc = "Org mode agenda",
+	},
+	{
+		"<leader>ooc",
+		":Org capture<cr>",
+		icon = "",
+		desc = "Org mode capture",
+	},
 	-- Other group  - Todo plugin
 	{
 		"<leader>oT",
@@ -211,13 +230,13 @@ wk.add({
 		icon = "",
 		desc = "Todo all Warning",
 	},
-  -- Copilot chat
-	{ "<leader>C", icon = "", group = "Copilot Chat" },
-	{ "<leader>Cc", "<cmd>CopilotChatToggle<cr>", icon = "", desc = "Toggle Copilot Chat" },
-	{ "<leader>Ce", "<cmd>CopilotChatExplain<cr>", icon = "", desc = "Explain code" },
-	{ "<leader>Cf", "<cmd>CopilotChatFix<cr>", icon = "", desc = "Fix code" },
-	{ "<leader>Co", "<cmd>CopilotChatOptimize<cr>", icon = "", desc = "Optimize code" },
-	{ "<leader>Ct", "<cmd>CopilotChatTests", icon = "", desc = "Test code" },
+	-- Copilot chat
+	{ "<leader>C", icon = "", group = "Copilot Chat", mode = { "n", "v" } },
+	{ "<leader>Cc", ":CopilotChatToggle<cr>", icon = "", desc = "Toggle Copilot Chat", mode = { "n", "v" } },
+	{ "<leader>Ce", ":CopilotChatExplain<cr>", icon = "", desc = "Explain code", mode = { "n", "v" } },
+	{ "<leader>Cf", ":CopilotChatFix<cr>", icon = "", desc = "Fix code", mode = { "n", "v" } },
+	{ "<leader>Co", ":CopilotChatOptimize<cr>", icon = "", desc = "Optimize code", mode = { "n", "v" } },
+	{ "<leader>Ct", ":CopilotChatTests", icon = "", desc = "Test code", mode = { "n", "v" } },
 
 	-- Hidden or Ignore
 	{ "<leader>c", hidden = true },

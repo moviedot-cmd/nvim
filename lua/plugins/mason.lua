@@ -44,6 +44,7 @@ return {
 				"pyright",
 			},
 			automatic_installation = true,
+      ignore_install = { "org" },
 		})
 
 		mason_tool_installer.setup({
