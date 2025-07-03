@@ -9,50 +9,14 @@ wk.setup({
 })
 
 wk.add({
-	-- Buffer
-	{ "<leader>b", icon = "", group = "Buffer" },
-	{
-		"<leader>bb",
-		"<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>",
-		icon = "",
-		desc = "All buffers",
-	},
-	{
-		"<leader>bc",
-		"<cmd>lua require('close_buffers').wipe({ type = 'other' })<cr>",
-		icon = "",
-		desc = "Close all buffers",
-	},
-	-- Explorer
-	{ "<leader>e", ":Oil --float<cr>", icon = "", desc = "Explorer" },
-	-- Files group
-	{ "<leader>f", icon = "", group = "Files" },
-	{ "<leader>ff", "<cmd>Telescope find_files<cr>", icon = "", desc = "Find files" },
-	{ "<leader>ft", "<cmd>Telescope live_grep<cr>", icon = "", desc = "Find files by text" },
 	-- Git group
-	{ "<leader>g", icon = "", group = "Git" },
-	{ "<leader>gb", "<cmd>Telescope git_branches<cr>", icon = "", desc = "Git branches" },
-	{ "<leader>gc", "<cmd>Telescope git_commits<cr>", icon = "", desc = "Git commits" },
-	{ "<leader>gd", "<cmd>DiffviewOpen<cr>", icon = "", desc = "Git diff" },
-	{ "<leader>gg", "<cmd>LazyGit<cr>", icon = "", desc = "Git" },
-	{ "<leader>gs", "<cmd>Telescope git_status<cr>", icon = "", desc = "Git status" },
-	{ "<leader>gB", "<cmd>Git blame<cr>", icon = "", desc = "Git blame" },
+	{ "<leader>g", icon = " ", group = "git" },
 	{
-		"<leader>gC",
+		"<leader>gc",
 		"<cmd>lua require('telescope').extensions.conventional_commits.conventional_commits()<cr>",
-		icon = "",
-		desc = "Git conventional commits",
+		icon = "",
+		desc = "Conventional Commits",
 	},
-	-- Help group
-	{ "<leader>h", icon = " ", group = "Help" },
-	{
-		"<leader>h?",
-		function()
-			require("which-key").show()
-		end,
-		desc = "Buffer Local Keymaps (which-key)",
-	},
-	{ "<leader>hm", ":messages<cr>", icon = " ", desc = "Start log messages" },
 	-- Lsp group
 	{ "<leader>l", icon = " ", group = "lsp" },
 	{ "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<cr>", icon = "", desc = "Lsp Diagnostics" },
@@ -65,43 +29,6 @@ wk.add({
 	{ "<leader>ls", "<cmd>LspStart<cr>", icon = "", desc = "Lsp Start" },
 	{ "<leader>lt", "<cmd>LspStop<cr>", icon = "", desc = "Lsp Stop" },
 	{ "<leader>lL", "<cmd>LspToggleDiagnostics<cr>", icon = "", desc = "Lsp Toggle Diagnostics" },
-	-- Marks
-	{
-		"<leader>m",
-		icon = "",
-		desc = "Marks",
-		group = "Marks",
-	},
-	{
-		"<leader>mc",
-		":BookmarksCommands<cr>",
-		icon = "",
-		desc = "Commands",
-	},
-	{
-		"<leader>mg",
-		":BookmarksGoto<cr>",
-		icon = "",
-		desc = "Marks Toggle",
-	},
-	{
-		"<leader>mn",
-		":BookmarksGotoNext<cr>",
-		icon = "",
-		desc = "Next",
-	},
-	{
-		"<leader>mp",
-		":BookmarksGotoPrev<cr>",
-		icon = "",
-		desc = "Prev",
-	},
-	{
-		"<leader>mm",
-		":BookmarksMark<cr>",
-		icon = "",
-		desc = "Mark",
-	},
 	-- Testing group
 	{ "<Leader>t", icon = "", group = "Testing" },
 	{ "<Leader>tt", "<cmd>TestNearest<cr>", icon = "", desc = "Test nearest" },
@@ -154,25 +81,6 @@ wk.add({
 		"<cmd>ToggleTerm size=20 direction=horizontal<cr>",
 		icon = "",
 		desc = "Terminal Horizontal",
-	},
-	{
-		"<leader>otv",
-		"<cmd>ToggleTerm size=80 direction=vertical<cr>",
-		icon = "",
-		desc = "Terminal Vertical",
-	},
-	-- Others group - Coder Runner
-	{
-		"<leader>oC",
-		icon = "",
-		desc = "Code Runner",
-		group = "Code Runner",
-	},
-	{
-		"<leader>oCr",
-		":RunCode<cr>",
-		icon = "",
-		desc = "Code Runner Run",
 	},
 	-- Other group - org mode
 	{
@@ -242,5 +150,6 @@ wk.add({
 	{ "<leader>c", hidden = true },
 	{ "<leader>d", hidden = true },
 	{ "<leader>r", hidden = true },
+	{ "<leader>w", hidden = true },
 	{ "<leader>D", hidden = true },
 })

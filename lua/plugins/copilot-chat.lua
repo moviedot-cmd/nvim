@@ -7,7 +7,7 @@ return {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 			{ "nvim-telescope/telescope.nvim" }, -- Use telescope for help actions
 		},
-		build = "make token",
+    build = "make tiktoken",
 		opts = {
 			mappings = {
 				submit_prompt = {
@@ -26,6 +26,13 @@ return {
 				width = 70,
 			},
 			auto_follow_cursor = false, -- Don't follow the cursor after getting response
+		},
+		prompts = {
+			GenerateTestsReact = {
+				prompt = "Write unit tests for the following code using jest, react testing library, the imports with commons js and for each test using the patron Arrange, Act and Assert",
+				mapping = "<leader>Ct",
+				description = "Generate tests for React",
+			},
 		},
 	},
 }
