@@ -1,7 +1,9 @@
 {
   "Meli import test": {
     "scope": "javascript",
-    "prefix": ["melitest"],
+    "prefix": [
+      "melitest"
+    ],
     "body": [
       "const React = require('react');",
       "require('@testing-library/jest-dom');",
@@ -30,11 +32,14 @@
   },
   "meli react commmon component": {
     "scope": "javascript",
-    "prefix": ["melicomp"],
+    "prefix": [
+      "melicomp"
+    ],
     "body": [
       "const React = require('react');",
       "const { useEffect } = require('react');",
       "const PropTypes = require('prop-types');",
+      "const useI18n = require('nordic/i18n/useI18n');",
       "",
       "const $1 = ({ $2 }) => {",
       "  useEffect(() => {",
@@ -65,7 +70,7 @@
       "",
       "const $1 = ({ $2 }) => {",
       "  const { status, data, refetch } = useQuery([$3], () => $4, { enabled: $5, refetchOnWindowFocus: $6, staleTime: $7 });",
-      "	return { status, data, refetch }",
+      "  return { status, data, refetch }",
       "};",
       "",
       "module.exports = $1;"
@@ -80,7 +85,7 @@
       "",
       "const $3 = async (req, res) => {",
       "  try {",
-      "    $4	",
+      "    $4",
       "  } catch (e) {",
       "    res.status(e.response? e.response?.status || INTERNAL_SERVER_ERROR: INTERNAL_SERVER_ERROR).json(e.response? e.response.data: { message: e.message || DEFAULT_ERROR_MESSAGE });",
       "  }",
@@ -105,7 +110,6 @@
       "describe('$1', () => {",
       "  const logError = jest.spyOn(logger, 'error');",
       "  const expectedError = 'Unexpected error';",
-
       "  beforeEach(() => {",
       "    logError.mockReset();",
       "  });",
