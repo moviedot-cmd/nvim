@@ -8,7 +8,7 @@ return {
       quiet = false, -- not recommended to change
       lsp_format = "fallback", -- not recommended to change
     },
-    ormatters_by_ft = {
+    formatters_by_ft = {
       javascript = { "prettier" },
       typescript = { "prettier" },
       javascriptreact = { "prettier" },
