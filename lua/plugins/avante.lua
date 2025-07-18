@@ -29,7 +29,7 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "claude",
+    provider = "copilot",
     providers = {
       copilot = {
         model = "gpt-4.1",
