@@ -28,7 +28,7 @@ return {
   ---@type avante.Config
   opts = {
     -- add any opts here
-    -- for example
+    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
     provider = "copilot",
     providers = {
       copilot = {
@@ -56,6 +56,12 @@ return {
           temperature = 0.75,
           max_tokens = 32768,
         },
+      },
+    },
+    mappings = {
+      diff = {
+        next = "<C-j>",
+        prev = "<C-k",
       },
     },
   },
